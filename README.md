@@ -17,6 +17,8 @@
   - ```apptainer run --bind  `readlink -f dist/cvmfs/`:/cvmfs docker://library/ubuntu ```
 
 **Rivanna method2: copy the directory tree of the release and use a container to mount it under /cvmfs**
+- apptainer pull docker://roboxes/rocky9 (to do: find a lighter weight repo w/ python, etc)
 - ```cp -a <path release via cvmfsexec> <local directory>``` , eg
   - `` mkdir -p dist/cvmfs/sft.cern.ch/lcg/views/LCG_96rc1```
   - ```cp -a dist/cvmfs/sft.cern.ch/lcg/views/LCG_96rc1/x86_64-centos7-gcc8-opt /sfs/gpfs/tardis/project/HEP_EF/cvmfs/sft.cern.ch/lcg/views/LCG_96rc1```
+  - to do: need to write a script to navigate the release and copy directoryes from /cvmfs/sft.cern.ch/lcg/releases
