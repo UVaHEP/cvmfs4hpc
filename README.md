@@ -13,9 +13,9 @@
 - get local path to cvmfs
   - readlink -f dist/cvmfs/
 - run a container with path bound to /cvmfs (assumes we run the container from the cvmfsexec directory)
-  - apptainer exec --bind `readlink -f dist/cvmfs/`:/cvmfs docker://library/ubuntu ls -l /cvmfs
-  - apptainer run --bind `readlink -f dist/cvmfs/`:/cvmfs docker://library/ubuntu
+  - ```apptainer exec --bind  `readlink -f dist/cvmfs/`:/cvmfs docker://library/ubuntu ls -l /cvmfs ```
+  - ```apptainer run --bind  `readlink -f dist/cvmfs/`:/cvmfs docker://library/ubuntu ```
 
 **Rivanna method2: copy the directory tree of the release and use a container to mount it under /cvmfs**
-- cp -a <release on cvmfs> <local directory>
+- ```cp -a <path release via cvmfsexec> <local directory>```
   - eg 
